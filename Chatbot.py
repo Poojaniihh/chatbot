@@ -4,6 +4,9 @@ import os
 
 api_key = os.getenv("api_key")
 
+if not api_key:
+    raise ValueError ("api key not found")
+
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
   api_key=api_key
